@@ -1,5 +1,6 @@
-Record=TopLevelDocument|FileName=Current_Detection_1_8.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Current_Detection_9_16.SchDoc|SheetNumber=5
+Record=TopLevelDocument|FileName=Current_Detection_1_8.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Current_Detection_9_16.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Current_Detection_Connectors.SchDoc|SheetNumber=4
 Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Databus.SchDoc|SheetNumber=1
 Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Inverter.SchDoc|SheetNumber=3
 Record=NoMainPathDocument|SourceDocument=Current_Detection_1_8.SchDoc|FileName=Shiftregister.SchDoc|SheetNumber=2
