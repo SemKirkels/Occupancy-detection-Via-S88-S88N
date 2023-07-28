@@ -1,0 +1,20 @@
+Change Component Comment : Designator=CN3 Old Comment=S88 In New Comment=S88 In [To next S88]
+Change Component Comment : Designator=CN1 Old Comment=S88N In New Comment=S88N In [To next S88N]
+Change Component Comment : Designator=CN2 Old Comment=S88N Out New Comment=S88N Out [To central]
+Change Component Comment : Designator=CN4 Old Comment=S88 Out New Comment=S88 Out [To central]
+Add Pin To Net: Unknown Pin: Pin CN1-3
+Add Pin To Net: Unknown Pin: Pin CN1-4
+Add Pin To Net: Unknown Pin: Pin CN1-5
+Add Pin To Net: Unknown Pin: Pin CN1-6
+Add Pin To Net: Unknown Pin: Pin CN1-7
+Add Pin To Net: Unknown Pin: Pin CN1-8
+Add Pin To Net: Unknown Pin: Pin CN2-3
+Add Pin To Net: Unknown Pin: Pin CN2-4
+Add Pin To Net: Unknown Pin: Pin CN2-5
+Add Pin To Net: Unknown Pin: Pin CN2-6
+Add Pin To Net: Unknown Pin: Pin CN2-7
+Add Pin To Net: Unknown Pin: Pin CN2-8
+Added Net: Name=NetCN1_MH1
+Added Net: Name=NetCN2_MH1
+Added Room: Name=Databus
+Added Room: Name=Shiftregister

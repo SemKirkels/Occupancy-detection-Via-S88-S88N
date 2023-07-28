@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=VCC Pin=CN1-1
+Removed Pin From Net: NetName=VCC Pin=CN2-1
+Removed Pin From Net: NetName=GND Pin=CN3-2
+Removed Pin From Net: NetName=VCC Pin=CN3-6
+Removed Pin From Net: NetName=GND Pin=CN4-2
+Removed Pin From Net: NetName=VCC Pin=CN4-6
+Added Pin To Net: NetName=NetIC1_9 Pin=IC1-9
+Added Pin To Net: NetName=NetIC1_9 Pin=IC2-9
+Added Net: Name=NetIC1_9
+Added Pin To Net: NetName=NetIC1_10 Pin=IC1-10
+Added Pin To Net: NetName=NetIC1_10 Pin=IC2-10
+Added Net: Name=NetIC1_10
+Added Pin To Net: NetName=NetIC1_11 Pin=IC1-11
+Added Net: Name=NetIC1_11
+Added Pin To Net: NetName=NetIC2_3 Pin=IC2-3
+Added Net: Name=NetIC2_3
+Added Room: Name=Shiftregister
