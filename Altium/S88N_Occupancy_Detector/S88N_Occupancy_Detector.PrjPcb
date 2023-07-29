@@ -201,6 +201,111 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GNNCIIPM
 
+[Document10]
+DocumentPath=Create_Gerbers.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for S88N_Occupancy_Detector\Design Rule Check - S88N_Occupancy_Detector.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=..\Gerbers\NC Drill\S88N_Occupancy_Detector.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Free Documents\NC Drill\S88N_Occupancy_Detector.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Free Documents\Gerber\S88N_Occupancy_Detector.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.G1
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.G2
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GM
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=..\Gerbers\NC Drill\S88N_Occupancy_Detector.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Free Documents\NC Drill\S88N_Occupancy_Detector.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=..\Gerbers\Gerber\S88N_Occupancy_Detector.REP
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Free Documents\Gerber\S88N_Occupancy_Detector.REP
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=..\Gerbers\NC Drill\S88N_Occupancy_Detector.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Free Documents\NC Drill\S88N_Occupancy_Detector.TXT
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
