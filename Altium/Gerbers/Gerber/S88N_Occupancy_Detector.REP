@@ -3,7 +3,7 @@ FileName = S88N_Occupancy_Detector.GBR
 AutoAperture = True
 *************************************************************
 Generating : Bottom Paste
-      File : S88N_Occupancy_Detector.GBP
+      File : S88N_Occupancy_Detector_Paste_Bot.gbr
 
     Adding Layer      : Bottom Paste
 
@@ -17,7 +17,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Paste
-      File : S88N_Occupancy_Detector.GTP
+      File : S88N_Occupancy_Detector_Paste_Top.gbr
 
     Adding Layer      : Top Paste
 
@@ -31,7 +31,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Solder
-      File : S88N_Occupancy_Detector.GBS
+      File : S88N_Occupancy_Detector_Soldermask_Bot.gbr
 
     Adding Layer      : Bottom Solder
 
@@ -58,11 +58,12 @@ Used DCodes :
     D27
     D28
     D29
+    D30
 *************************************************************
 
 *************************************************************
 Generating : Top Solder
-      File : S88N_Occupancy_Detector.GTS
+      File : S88N_Occupancy_Detector_Soldermask_Top.gbr
 
     Adding Layer      : Top Solder
 
@@ -89,11 +90,12 @@ Used DCodes :
     D27
     D28
     D29
+    D30
 *************************************************************
 
 *************************************************************
 Generating : Bottom Overlay
-      File : S88N_Occupancy_Detector.GBO
+      File : S88N_Occupancy_Detector_Legend_Bot.gbr
 
     Adding Layer      : Bottom Overlay
 
@@ -103,7 +105,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Overlay
-      File : S88N_Occupancy_Detector.GTO
+      File : S88N_Occupancy_Detector_Legend_Top.gbr
 
     Adding Layer      : Top Overlay
 
@@ -116,7 +118,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Layer
-      File : S88N_Occupancy_Detector.GBL
+      File : S88N_Occupancy_Detector_Copper_Signal_Bot.gbr
 
     Adding Layer      : Bottom Layer
 
@@ -124,9 +126,8 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D30
-    D32
-    D34
+    D31
+    D33
     D35
     D36
     D37
@@ -143,11 +144,13 @@ Used DCodes :
     D48
     D49
     D50
+    D51
+    D52
 *************************************************************
 
 *************************************************************
 Generating : Middle bottom
-      File : S88N_Occupancy_Detector.G2
+      File : S88N_Occupancy_Detector_Copper_Signal_2.gbr
 
     Adding Layer      : Middle bottom
 
@@ -155,8 +158,7 @@ Generating : Middle bottom
 
 
 Used DCodes :
-    D32
-    D34
+    D33
     D35
     D36
     D37
@@ -173,11 +175,13 @@ Used DCodes :
     D48
     D49
     D50
+    D51
+    D52
 *************************************************************
 
 *************************************************************
 Generating : Middle Top
-      File : S88N_Occupancy_Detector.G1
+      File : S88N_Occupancy_Detector_Copper_Signal_1.gbr
 
     Adding Layer      : Middle Top
 
@@ -185,9 +189,8 @@ Generating : Middle Top
 
 
 Used DCodes :
-    D30
-    D32
-    D34
+    D31
+    D33
     D35
     D36
     D37
@@ -204,11 +207,13 @@ Used DCodes :
     D48
     D49
     D50
+    D51
+    D52
 *************************************************************
 
 *************************************************************
 Generating : Top Layer
-      File : S88N_Occupancy_Detector.GTL
+      File : S88N_Occupancy_Detector_Copper_Signal_Top.gbr
 
     Adding Layer      : Top Layer
 
@@ -216,7 +221,6 @@ Generating : Top Layer
 
 
 Used DCodes :
-    D30
     D31
     D32
     D33
@@ -237,14 +241,16 @@ Used DCodes :
     D48
     D49
     D50
+    D51
+    D52
 *************************************************************
 
 *************************************************************
 Generating : Profile
-      File : S88N_Occupancy_Detector.GM
+      File : S88N_Occupancy_Detector_Profile.gbr
 
 
 Used DCodes :
-    D51
+    D53
 *************************************************************
 

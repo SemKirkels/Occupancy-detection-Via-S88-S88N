@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: S88N_Occupancy_Detector.PcbDoc   29/07/2023  14:58:59
+NCDrill File Report For: S88N_Occupancy_Detector.PcbDoc   31/07/2023  08:29:46
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -17,8 +17,9 @@ T7      0.9mm (35mil)                                             Round         
 T8      1.1mm (43mil)                                             Round             18        PTH        128.27mm (5.05inch)
 T9      1.15mm (45mil)                                            Round             12        PTH        111.33mm (4.38inch)
 T10     1.7mm (67mil)                                             Round             4         PTH        184.93mm (7.28inch)
-T11     3.2mm (126mil)                                            Round             4         NPTH       193.06mm (7.60inch)
+T11     2.5mm (98mil)                                             Round             3         PTH        173.96mm (6.85inch)
+T12     3.2mm (126mil)                                            Round             4         NPTH       193.06mm (7.60inch)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              340
+Totals                                                                              343
 
 Total Processing Time (hh:mm:ss) : 00:00:00
