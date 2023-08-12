@@ -1,0 +1,40 @@
+Removed Pin From Net: NetName=NetC4_1 Pin=IC6-10
+Removed Pin From Net: NetName=NetC3_1 Pin=IC6-12
+Removed Pin From Net: NetName=NetC2_1 Pin=IC6-14
+Removed Pin From Net: NetName=NetC1_1 Pin=IC6-16
+Removed Pin From Net: NetName=NetC5_1 Pin=IC7-10
+Removed Pin From Net: NetName=NetC6_1 Pin=IC7-12
+Removed Pin From Net: NetName=NetC7_1 Pin=IC7-14
+Removed Pin From Net: NetName=NetC8_1 Pin=IC7-16
+Removed Pin From Net: NetName=NetC12_1 Pin=IC8-10
+Removed Pin From Net: NetName=NetC11_1 Pin=IC8-12
+Removed Pin From Net: NetName=NetC10_1 Pin=IC8-14
+Removed Pin From Net: NetName=NetC9_1 Pin=IC8-16
+Removed Pin From Net: NetName=NetC13_1 Pin=IC9-10
+Removed Pin From Net: NetName=NetC14_1 Pin=IC9-12
+Removed Pin From Net: NetName=NetC15_1 Pin=IC9-14
+Removed Pin From Net: NetName=NetC16_1 Pin=IC9-16
+Change Component Footprint: Designator=IC6 Old Footprint=LTV844 New Footprint=CD4014
+Change Component Footprint: Designator=IC7 Old Footprint=LTV844 New Footprint=CD4014
+Change Component Footprint: Designator=IC8 Old Footprint=LTV844 New Footprint=CD4014
+Change Component Footprint: Designator=IC9 Old Footprint=LTV844 New Footprint=CD4014
+Change Component Comment : Designator=R1 Old Comment=Ohm New Comment=10 kOhm
+Added Pin To Net: NetName=NetC1_1 Pin=IC6-10
+Added Pin To Net: NetName=NetC2_1 Pin=IC6-12
+Added Pin To Net: NetName=NetC3_1 Pin=IC6-14
+Added Pin To Net: NetName=NetC4_1 Pin=IC6-16
+Added Pin To Net: NetName=NetC8_1 Pin=IC7-10
+Added Pin To Net: NetName=NetC7_1 Pin=IC7-12
+Added Pin To Net: NetName=NetC6_1 Pin=IC7-14
+Added Pin To Net: NetName=NetC5_1 Pin=IC7-16
+Added Pin To Net: NetName=NetC9_1 Pin=IC8-10
+Added Pin To Net: NetName=NetC10_1 Pin=IC8-12
+Added Pin To Net: NetName=NetC11_1 Pin=IC8-14
+Added Pin To Net: NetName=NetC12_1 Pin=IC8-16
+Added Pin To Net: NetName=NetC16_1 Pin=IC9-10
+Added Pin To Net: NetName=NetC15_1 Pin=IC9-12
+Added Pin To Net: NetName=NetC14_1 Pin=IC9-14
+Added Pin To Net: NetName=NetC13_1 Pin=IC9-16
+Added Member To Class: ClassName=Shiftregister Member=Component IC1 CD4014BE
+Added Room: Name=Databus
+Added Room: Name=Shiftregister

@@ -1,0 +1,437 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09/08/2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:43:48</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc" class="file"><acronym title="C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc">C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">35</td></tr>
+</table>
+</td>
+</table><a name="IDZL1WKAG3NX0EJRMAWBOHWQCKEGCRL2IG11QIL1F151YLFFV0ZMI"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW44WGWTVIUNIH2GGCWWTMZC2GE2DLJVVNCMQTDPGH5JLOXSZO31G">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKLV3KNKEKENYM4DDWUTZPX2F3MGSHNHBGRK10XKHZ1S4JOCQOPM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPDDBF2IFNKQ0M1AXY2U4L3P4YPG303IGA2001NH1XXWFPCW2H1F">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5B2VZ1KHJYKAGVK4YPWBSSVPPODFTW2CYIJBAPKWFDRYMFH2FVMP">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP5QQHLLMMGHNJWXM1W2QJ5UQ5FP1PIOPZD1JEPLTDGGLHMGIK51">Width Constraint (Min=20mil) (Max=70mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLUJHTRMK4WO3O12FQPL2QB5WQB2K4UEMALYKDTC3MXBCX0FW0PWC">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIIPOTMY3OWP4FADLPJNU152G4EMYPB2UGIFMD2HLZOQSJFYYIIHL">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN3KDWWM12A5XEFAXIR0MKMISNJDFKRW1Q4U4R2N4LBZSMTXDBBDJ">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY1PNZ2X5XLY5FOV4XCCESL3FLGRN2MFSEASJGWKML1YG2BBYM0JG">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIECK3DQJX32QFU0CC4RVW5E4UJZBPIALQHCFELF30R3PXECBK0RB">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">30</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ1YI1A5TVA0YCBYLPQNW5HRZMFCQIZLSFENQV4JL53I0ZTQAECEL">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1RSRQJCGX1CWNGJPHR22ITYVZJSKYMD5R0ZWE3OGZFAS2KJI3I">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0RNMOUPJBC4WJFKOZOSVCDTR0EGQFWVFMQP0JEFGSRJ5MXR3CX2B">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">35</td>
+</tr>
+</table><br><a name="IDIIPOTMY3OWP4FADLPJNU152G4EMYPB2UGIFMD2HLZOQSJFYYIIHL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.977mil|Location2.X=1666.211mil|Location1.Y=1914.563mil|Location2.Y=2041.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.977mil|Location2.X=1666.211mil|Location1.Y=1914.563mil|Location2.Y=2041.797mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad CN1-MH3(1602.594mil,1978.18mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.977mil|Location2.X=1666.211mil|Location1.Y=1464.563mil|Location2.Y=1591.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1538.977mil|Location2.X=1666.211mil|Location1.Y=1464.563mil|Location2.Y=1591.797mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad CN1-MH4(1602.594mil,1528.18mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5114.425mil|Location2.X=5241.659mil|Location1.Y=1460.445mil|Location2.Y=1587.679mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5114.425mil|Location2.X=5241.659mil|Location1.Y=1460.445mil|Location2.Y=1587.679mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad CN3-MH3(5178.042mil,1524.062mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5114.425mil|Location2.X=5241.659mil|Location1.Y=1910.445mil|Location2.Y=2037.679mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5114.425mil|Location2.X=5241.659mil|Location1.Y=1910.445mil|Location2.Y=2037.679mil|Absolute=True">Hole Size Constraint: (125.984mil &gt; 100mil) Pad CN3-MH4(5178.042mil,1974.062mil) on Multi-Layer Actual Hole Size = 125.984mil</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3334.375mil|Location2.X=3465.625mil|Location1.Y=3464.375mil|Location2.Y=3595.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3334.375mil|Location2.X=3465.625mil|Location1.Y=3464.375mil|Location2.Y=3595.625mil|Absolute=True">Hole Size Constraint: (130mil &gt; 100mil) Pad Free-2(3400mil,3530mil) on Multi-Layer Actual Hole Size = 130mil</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIECK3DQJX32QFU0CC4RVW5E4UJZBPIALQHCFELF30R3PXECBK0RB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1663.433mil|Location2.X=1674.683mil|Location1.Y=2055.995mil|Location2.Y=2067.245mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1663.433mil|Location2.X=1674.683mil|Location1.Y=2055.995mil|Location2.Y=2067.245mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.997mil &lt; 10mil) Between Pad CN1-MH1(1722.672mil,2058.298mil) on Multi-Layer And Track (1179.364mil,2062.236mil)(1661.648mil,2062.236mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.997mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1663.433mil|Location2.X=1674.683mil|Location1.Y=1439.116mil|Location2.Y=1450.366mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1663.433mil|Location2.X=1674.683mil|Location1.Y=1439.116mil|Location2.Y=1450.366mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.996mil &lt; 10mil) Between Pad CN1-MH2(1722.672mil,1448.062mil) on Multi-Layer And Track (1179.364mil,1444.126mil)(1661.648mil,1444.126mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.996mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.186mil|Location2.X=1238.436mil|Location1.Y=1127.185mil|Location2.Y=1138.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.186mil|Location2.X=1238.436mil|Location1.Y=1127.185mil|Location2.Y=1138.435mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.546mil &lt; 10mil) Between Pad CN2-1(1198.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.546mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.186mil|Location2.X=1238.436mil|Location1.Y=1204.646mil|Location2.Y=1215.896mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1227.186mil|Location2.X=1238.436mil|Location1.Y=1204.646mil|Location2.Y=1215.896mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.548mil &lt; 10mil) Between Pad CN2-1(1198.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.548mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.229mil|Location2.X=1304.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.229mil|Location2.X=1304.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN2-2(1298.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.229mil|Location2.X=1304.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1293.229mil|Location2.X=1304.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN2-2(1298.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.229mil|Location2.X=1404.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.229mil|Location2.X=1404.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN2-3(1398.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.229mil|Location2.X=1404.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1393.229mil|Location2.X=1404.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN2-3(1398.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1493.229mil|Location2.X=1504.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1493.229mil|Location2.X=1504.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN2-4(1498.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1493.229mil|Location2.X=1504.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1493.229mil|Location2.X=1504.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN2-4(1498.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.229mil|Location2.X=1604.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.229mil|Location2.X=1604.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN2-5(1598.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.229mil|Location2.X=1604.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1593.229mil|Location2.X=1604.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN2-5(1598.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.229mil|Location2.X=1704.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.229mil|Location2.X=1704.479mil|Location1.Y=1127.177mil|Location2.Y=1138.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN2-6(1698.854mil,1171.54mil) on Multi-Layer And Track (1148.854mil,1124.1mil)(1748.854mil,1124.1mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.229mil|Location2.X=1704.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1693.229mil|Location2.X=1704.479mil|Location1.Y=1204.654mil|Location2.Y=1215.904mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN2-6(1698.854mil,1171.54mil) on Multi-Layer And Track (1198.854mil,1218.982mil)(1748.854mil,1218.982mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5105.951mil|Location2.X=5117.201mil|Location1.Y=1434.998mil|Location2.Y=1446.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5105.951mil|Location2.X=5117.201mil|Location1.Y=1434.998mil|Location2.Y=1446.248mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.996mil &lt; 10mil) Between Pad CN3-MH1(5057.962mil,1443.944mil) on Multi-Layer And Track (5118.986mil,1440.008mil)(5601.27mil,1440.008mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.996mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5105.951mil|Location2.X=5117.201mil|Location1.Y=2051.877mil|Location2.Y=2063.127mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5105.951mil|Location2.X=5117.201mil|Location1.Y=2051.877mil|Location2.Y=2063.127mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (6.996mil &lt; 10mil) Between Pad CN3-MH2(5057.962mil,2054.18mil) on Multi-Layer And Track (5118.986mil,2058.118mil)(5601.27mil,2058.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [6.997mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5110.114mil|Location2.X=5121.364mil|Location1.Y=1128.12mil|Location2.Y=1139.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5110.114mil|Location2.X=5121.364mil|Location1.Y=1128.12mil|Location2.Y=1139.37mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.548mil &lt; 10mil) Between Pad CN4-1(5081.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.548mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5110.114mil|Location2.X=5121.364mil|Location1.Y=1205.581mil|Location2.Y=1216.831mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5110.114mil|Location2.X=5121.364mil|Location1.Y=1205.581mil|Location2.Y=1216.831mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.546mil &lt; 10mil) Between Pad CN4-1(5081.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.546mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5176.157mil|Location2.X=5187.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5176.157mil|Location2.X=5187.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN4-2(5181.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5176.157mil|Location2.X=5187.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5176.157mil|Location2.X=5187.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN4-2(5181.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5276.157mil|Location2.X=5287.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5276.157mil|Location2.X=5287.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN4-3(5281.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5276.157mil|Location2.X=5287.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5276.157mil|Location2.X=5287.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN4-3(5281.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5376.157mil|Location2.X=5387.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5376.157mil|Location2.X=5387.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN4-4(5381.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5376.157mil|Location2.X=5387.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5376.157mil|Location2.X=5387.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN4-4(5381.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.157mil|Location2.X=5487.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.157mil|Location2.X=5487.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN4-5(5481.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.157mil|Location2.X=5487.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5476.157mil|Location2.X=5487.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN4-5(5481.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5576.157mil|Location2.X=5587.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5576.157mil|Location2.X=5587.407mil|Location1.Y=1128.112mil|Location2.Y=1139.362mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.533mil &lt; 10mil) Between Pad CN4-6(5581.782mil,1172.476mil) on Multi-Layer And Track (5031.782mil,1125.034mil)(5631.782mil,1125.034mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.533mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5576.157mil|Location2.X=5587.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5576.157mil|Location2.X=5587.407mil|Location1.Y=1205.589mil|Location2.Y=1216.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.531mil &lt; 10mil) Between Pad CN4-6(5581.782mil,1172.476mil) on Multi-Layer And Track (5081.782mil,1219.916mil)(5631.782mil,1219.916mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.531mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4827.367mil|Location2.X=4838.617mil|Location1.Y=2384.375mil|Location2.Y=2395.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4827.367mil|Location2.X=4838.617mil|Location1.Y=2384.375mil|Location2.Y=2395.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.843mil &lt; 10mil) Between Pad R1-1(4804.448mil,2390mil) on Multi-Layer And Track (4841.85mil,2390mil)(4990.472mil,2390mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.393mil|Location2.X=5336.643mil|Location1.Y=2384.375mil|Location2.Y=2395.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Semki\Nextcloud\2022_2023\Profskills\S88_Bezetmelder\Github\Occupancy_detection\Altium\S88N_Occupancy_Detector\S88N_Occupancy_Detector_Rev_2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5325.393mil|Location2.X=5336.643mil|Location1.Y=2384.375mil|Location2.Y=2395.625mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.83mil &lt; 10mil) Between Pad R1-2(5359.566mil,2390mil) on Multi-Layer And Track (5173.544mil,2390mil)(5322.166mil,2390mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.83mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
