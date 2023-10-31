@@ -7,7 +7,7 @@
 | CAT5 R1D 3.3E4N | RJ45 Connector          | 2                    | €1,22      | Reichelt | (Optional Only needed for S88N) |
 | 74HC04UTC       | Hex Invertor            | 3                    | €0,25      | Reichelt |                                 |
 | GS14P           | IC Socket 14P           | 3                    | €0,28      | Reichelt |                                 |
-| SIL 8-4 47      | Resistornetwork 47 Ohm  | 4                    | €0,10      | Reichelt |                                 |
+| SIL 8-4 22      | Resistornetwork 22 Ohm  | 4                    | €0,10      | Reichelt |                                 |
 | SIL 9-8 10K     | Resistornetwork 10 kOhm | 2                    | €0,16      | Reichelt |                                 |
 | Kerko 10N       | Capacitor 10 nF         | 16                   | €0,06      | Reichelt |                                 |
 | B140C1000DIP    | Bridge rectifier        | 16                   | €0,15      | Reichelt |                                 |
